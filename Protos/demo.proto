@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcDemo";
+
+package org.demo;
+
+message DemoContainer {
+    string id = 1;
+    repeated DemoObject objects = 2;
+}
+
+message DemoObject {
+    Info info = 1;
+    string name = 2;
+    MyType type = 3;
+    int32 count = 4;
+    string long_field_name = 5;
+}
+
+message Info {
+    string id = 1;
+    uint64 time = 2;
+}
+
+enum MyType {
+    DEFAULT = 0;
+    ENABLED = 1;
+    DISABLED = 2;
+}
+
+service DemoApi {
+    rpc DoSomething(DemoContainer) returns (DemoContainer) {};
+}
