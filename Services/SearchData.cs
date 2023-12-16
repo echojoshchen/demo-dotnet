@@ -71,13 +71,20 @@ namespace Demo.Search
             db.Commit();
         }
 
+        public void DeleteItems(List<string> ids)
+        {
+            db!.BeginTransaction();
+            for (int i = 0; i < ids.Count; i++)
+            {
+                var id = ids[i];
+                string deleteStatement = "DELETE FROM search_index WHERE id = ?";
+                db.Execute(deleteStatement, id);
+            }
+            db.Commit();
+        }
+
         private void openDb() {
-            try {
-                db = new SQLiteConnection(getIndexPath());
-            }
-            catch (Exception e) {
-                throw new SearchConfigError(SearchConfigErrorType.dbError, e.Message);
-            }
+            db = new SQLiteConnection(getIndexPath());
         }
 
         private string getIndexPath() {

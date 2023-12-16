@@ -18,7 +18,7 @@ message ContentItem {
 service SearchIndexService {
     rpc AddItems (AddItemsRequest) returns (AddItemsResponse) {
         option (google.api.http) = {
-            post: "/api/1.0/add-or-update-items"
+            post: "/api/1.0/add-items"
             body: "*"
         };
     }
@@ -36,6 +36,7 @@ message AddItemsRequest {
 
 message AddItemsResponse {
     bool success = 1;
+    string message = 2;
 }
 
 message DeleteItemsRequest {
@@ -44,6 +45,7 @@ message DeleteItemsRequest {
 
 message DeleteItemsResponse {
     bool success = 1;
+    string message = 2;
 }
 
 service SearchQueryService {

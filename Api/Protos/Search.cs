@@ -30,28 +30,29 @@ namespace Demo.Search {
             "Eg0KBXRpdGxlGAMgASgJEjEKDXB1Ymxpc2hlZERhdGUYBCABKAsyGi5nb29n",
             "bGUucHJvdG9idWYuVGltZXN0YW1wEg8KB2NvbnRlbnQYBSADKAkiNwoPQWRk",
             "SXRlbXNSZXF1ZXN0EiQKBWl0ZW1zGAEgAygLMhUub3JnLmRlbW8uQ29udGVu",
-            "dEl0ZW0iIwoQQWRkSXRlbXNSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIIiEK",
-            "EkRlbGV0ZUl0ZW1zUmVxdWVzdBILCgNpZHMYASADKAkiJgoTRGVsZXRlSXRl",
-            "bXNSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIIi8KEUdldFJlc3VsdHNSZXF1",
-            "ZXN0EgwKBGxhbmcYASABKAkSDAoEdGV4dBgCIAEoCSI6ChJHZXRSZXN1bHRz",
-            "UmVzcG9uc2USJAoFaXRlbXMYASADKAsyFS5vcmcuZGVtby5Db250ZW50SXRl",
-            "bTLuAQoSU2VhcmNoSW5kZXhTZXJ2aWNlEmoKCEFkZEl0ZW1zEhkub3JnLmRl",
-            "bW8uQWRkSXRlbXNSZXF1ZXN0Ghoub3JnLmRlbW8uQWRkSXRlbXNSZXNwb25z",
-            "ZSIngtPkkwIhIhwvYXBpLzEuMC9hZGQtb3ItdXBkYXRlLWl0ZW1zOgEqEmwK",
-            "C0RlbGV0ZUl0ZW1zEhwub3JnLmRlbW8uRGVsZXRlSXRlbXNSZXF1ZXN0Gh0u",
-            "b3JnLmRlbW8uRGVsZXRlSXRlbXNSZXNwb25zZSIggtPkkwIaIhUvYXBpLzEu",
-            "MC9kZWxldGUtaXRlbXM6ASoyewoSU2VhcmNoUXVlcnlTZXJ2aWNlEmUKCkdl",
-            "dFJlc3VsdHMSGy5vcmcuZGVtby5HZXRSZXN1bHRzUmVxdWVzdBocLm9yZy5k",
-            "ZW1vLkdldFJlc3VsdHNSZXNwb25zZSIcgtPkkwIWEhQvYXBpLzEuMC9nZXQt",
-            "cmVzdWx0c0IOqgILRGVtby5TZWFyY2hiBnByb3RvMw=="));
+            "dEl0ZW0iNAoQQWRkSXRlbXNSZXNwb25zZRIPCgdzdWNjZXNzGAEgASgIEg8K",
+            "B21lc3NhZ2UYAiABKAkiIQoSRGVsZXRlSXRlbXNSZXF1ZXN0EgsKA2lkcxgB",
+            "IAMoCSI3ChNEZWxldGVJdGVtc1Jlc3BvbnNlEg8KB3N1Y2Nlc3MYASABKAgS",
+            "DwoHbWVzc2FnZRgCIAEoCSIvChFHZXRSZXN1bHRzUmVxdWVzdBIMCgRsYW5n",
+            "GAEgASgJEgwKBHRleHQYAiABKAkiOgoSR2V0UmVzdWx0c1Jlc3BvbnNlEiQK",
+            "BWl0ZW1zGAEgAygLMhUub3JnLmRlbW8uQ29udGVudEl0ZW0y5AEKElNlYXJj",
+            "aEluZGV4U2VydmljZRJgCghBZGRJdGVtcxIZLm9yZy5kZW1vLkFkZEl0ZW1z",
+            "UmVxdWVzdBoaLm9yZy5kZW1vLkFkZEl0ZW1zUmVzcG9uc2UiHYLT5JMCFyIS",
+            "L2FwaS8xLjAvYWRkLWl0ZW1zOgEqEmwKC0RlbGV0ZUl0ZW1zEhwub3JnLmRl",
+            "bW8uRGVsZXRlSXRlbXNSZXF1ZXN0Gh0ub3JnLmRlbW8uRGVsZXRlSXRlbXNS",
+            "ZXNwb25zZSIggtPkkwIaIhUvYXBpLzEuMC9kZWxldGUtaXRlbXM6ASoyewoS",
+            "U2VhcmNoUXVlcnlTZXJ2aWNlEmUKCkdldFJlc3VsdHMSGy5vcmcuZGVtby5H",
+            "ZXRSZXN1bHRzUmVxdWVzdBocLm9yZy5kZW1vLkdldFJlc3VsdHNSZXNwb25z",
+            "ZSIcgtPkkwIWEhQvYXBpLzEuMC9nZXQtcmVzdWx0c0IOqgILRGVtby5TZWFy",
+            "Y2hiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Demo.Search.ContentItem), global::Demo.Search.ContentItem.Parser, new[]{ "Lang", "Id", "Title", "PublishedDate", "Content" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Demo.Search.AddItemsRequest), global::Demo.Search.AddItemsRequest.Parser, new[]{ "Items" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Demo.Search.AddItemsResponse), global::Demo.Search.AddItemsResponse.Parser, new[]{ "Success" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Demo.Search.AddItemsResponse), global::Demo.Search.AddItemsResponse.Parser, new[]{ "Success", "Message" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Demo.Search.DeleteItemsRequest), global::Demo.Search.DeleteItemsRequest.Parser, new[]{ "Ids" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Demo.Search.DeleteItemsResponse), global::Demo.Search.DeleteItemsResponse.Parser, new[]{ "Success" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Demo.Search.DeleteItemsResponse), global::Demo.Search.DeleteItemsResponse.Parser, new[]{ "Success", "Message" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Demo.Search.GetResultsRequest), global::Demo.Search.GetResultsRequest.Parser, new[]{ "Lang", "Text" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Demo.Search.GetResultsResponse), global::Demo.Search.GetResultsResponse.Parser, new[]{ "Items" }, null, null, null, null)
           }));
@@ -608,6 +609,7 @@ namespace Demo.Search {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public AddItemsResponse(AddItemsResponse other) : this() {
       success_ = other.success_;
+      message_ = other.message_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -629,6 +631,18 @@ namespace Demo.Search {
       }
     }
 
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 2;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -645,6 +659,7 @@ namespace Demo.Search {
         return true;
       }
       if (Success != other.Success) return false;
+      if (Message != other.Message) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -653,6 +668,7 @@ namespace Demo.Search {
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -675,6 +691,10 @@ namespace Demo.Search {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -689,6 +709,10 @@ namespace Demo.Search {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -701,6 +725,9 @@ namespace Demo.Search {
       int size = 0;
       if (Success != false) {
         size += 1 + 1;
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -716,6 +743,9 @@ namespace Demo.Search {
       }
       if (other.Success != false) {
         Success = other.Success;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -736,6 +766,10 @@ namespace Demo.Search {
             Success = input.ReadBool();
             break;
           }
+          case 18: {
+            Message = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -753,6 +787,10 @@ namespace Demo.Search {
             break;
           case 8: {
             Success = input.ReadBool();
+            break;
+          }
+          case 18: {
+            Message = input.ReadString();
             break;
           }
         }
@@ -975,6 +1013,7 @@ namespace Demo.Search {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeleteItemsResponse(DeleteItemsResponse other) : this() {
       success_ = other.success_;
+      message_ = other.message_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -996,6 +1035,18 @@ namespace Demo.Search {
       }
     }
 
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 2;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1012,6 +1063,7 @@ namespace Demo.Search {
         return true;
       }
       if (Success != other.Success) return false;
+      if (Message != other.Message) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1020,6 +1072,7 @@ namespace Demo.Search {
     public override int GetHashCode() {
       int hash = 1;
       if (Success != false) hash ^= Success.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1042,6 +1095,10 @@ namespace Demo.Search {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1056,6 +1113,10 @@ namespace Demo.Search {
         output.WriteRawTag(8);
         output.WriteBool(Success);
       }
+      if (Message.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1068,6 +1129,9 @@ namespace Demo.Search {
       int size = 0;
       if (Success != false) {
         size += 1 + 1;
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1083,6 +1147,9 @@ namespace Demo.Search {
       }
       if (other.Success != false) {
         Success = other.Success;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1103,6 +1170,10 @@ namespace Demo.Search {
             Success = input.ReadBool();
             break;
           }
+          case 18: {
+            Message = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -1120,6 +1191,10 @@ namespace Demo.Search {
             break;
           case 8: {
             Success = input.ReadBool();
+            break;
+          }
+          case 18: {
+            Message = input.ReadString();
             break;
           }
         }
