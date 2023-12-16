@@ -46,37 +46,21 @@ namespace Demo.Search {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Demo.Search.AddOrUpdateItemsRequest> __Marshaller_org_demo_AddOrUpdateItemsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.AddOrUpdateItemsRequest.Parser));
+    static readonly grpc::Marshaller<global::Demo.Search.AddItemsRequest> __Marshaller_org_demo_AddItemsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.AddItemsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Demo.Search.AddOrUpdateItemsResponse> __Marshaller_org_demo_AddOrUpdateItemsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.AddOrUpdateItemsResponse.Parser));
+    static readonly grpc::Marshaller<global::Demo.Search.AddItemsResponse> __Marshaller_org_demo_AddItemsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.AddItemsResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Demo.Search.DeleteItemsRequest> __Marshaller_org_demo_DeleteItemsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.DeleteItemsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Demo.Search.DeleteItemsResponse> __Marshaller_org_demo_DeleteItemsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.DeleteItemsResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Demo.Search.DeleteContentFamilyRequest> __Marshaller_org_demo_DeleteContentFamilyRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.DeleteContentFamilyRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Demo.Search.DeleteContentFamilyResponse> __Marshaller_org_demo_DeleteContentFamilyResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.DeleteContentFamilyResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Demo.Search.DeleteAllRequest> __Marshaller_org_demo_DeleteAllRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.DeleteAllRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Demo.Search.DeleteAllResponse> __Marshaller_org_demo_DeleteAllResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.DeleteAllResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Demo.Search.GetLastIndexedOnRequest> __Marshaller_org_demo_GetLastIndexedOnRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.GetLastIndexedOnRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Demo.Search.GetLastIndexedOnResponse> __Marshaller_org_demo_GetLastIndexedOnResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.GetLastIndexedOnResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Demo.Search.ResetRequest> __Marshaller_org_demo_ResetRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.ResetRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Demo.Search.ResetResponse> __Marshaller_org_demo_ResetResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.ResetResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Demo.Search.AddOrUpdateItemsRequest, global::Demo.Search.AddOrUpdateItemsResponse> __Method_AddOrUpdateItems = new grpc::Method<global::Demo.Search.AddOrUpdateItemsRequest, global::Demo.Search.AddOrUpdateItemsResponse>(
+    static readonly grpc::Method<global::Demo.Search.AddItemsRequest, global::Demo.Search.AddItemsResponse> __Method_AddItems = new grpc::Method<global::Demo.Search.AddItemsRequest, global::Demo.Search.AddItemsResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "AddOrUpdateItems",
-        __Marshaller_org_demo_AddOrUpdateItemsRequest,
-        __Marshaller_org_demo_AddOrUpdateItemsResponse);
+        "AddItems",
+        __Marshaller_org_demo_AddItemsRequest,
+        __Marshaller_org_demo_AddItemsResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Demo.Search.DeleteItemsRequest, global::Demo.Search.DeleteItemsResponse> __Method_DeleteItems = new grpc::Method<global::Demo.Search.DeleteItemsRequest, global::Demo.Search.DeleteItemsResponse>(
@@ -85,38 +69,6 @@ namespace Demo.Search {
         "DeleteItems",
         __Marshaller_org_demo_DeleteItemsRequest,
         __Marshaller_org_demo_DeleteItemsResponse);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Demo.Search.DeleteContentFamilyRequest, global::Demo.Search.DeleteContentFamilyResponse> __Method_DeleteContentFamily = new grpc::Method<global::Demo.Search.DeleteContentFamilyRequest, global::Demo.Search.DeleteContentFamilyResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "DeleteContentFamily",
-        __Marshaller_org_demo_DeleteContentFamilyRequest,
-        __Marshaller_org_demo_DeleteContentFamilyResponse);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Demo.Search.DeleteAllRequest, global::Demo.Search.DeleteAllResponse> __Method_DeleteAll = new grpc::Method<global::Demo.Search.DeleteAllRequest, global::Demo.Search.DeleteAllResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "DeleteAll",
-        __Marshaller_org_demo_DeleteAllRequest,
-        __Marshaller_org_demo_DeleteAllResponse);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Demo.Search.GetLastIndexedOnRequest, global::Demo.Search.GetLastIndexedOnResponse> __Method_GetLastIndexedOn = new grpc::Method<global::Demo.Search.GetLastIndexedOnRequest, global::Demo.Search.GetLastIndexedOnResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "GetLastIndexedOn",
-        __Marshaller_org_demo_GetLastIndexedOnRequest,
-        __Marshaller_org_demo_GetLastIndexedOnResponse);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Demo.Search.ResetRequest, global::Demo.Search.ResetResponse> __Method_Reset = new grpc::Method<global::Demo.Search.ResetRequest, global::Demo.Search.ResetResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "Reset",
-        __Marshaller_org_demo_ResetRequest,
-        __Marshaller_org_demo_ResetResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -129,37 +81,13 @@ namespace Demo.Search {
     public abstract partial class SearchIndexServiceBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Demo.Search.AddOrUpdateItemsResponse> AddOrUpdateItems(global::Demo.Search.AddOrUpdateItemsRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Demo.Search.AddItemsResponse> AddItems(global::Demo.Search.AddItemsRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::Demo.Search.DeleteItemsResponse> DeleteItems(global::Demo.Search.DeleteItemsRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Demo.Search.DeleteContentFamilyResponse> DeleteContentFamily(global::Demo.Search.DeleteContentFamilyRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Demo.Search.DeleteAllResponse> DeleteAll(global::Demo.Search.DeleteAllRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Demo.Search.GetLastIndexedOnResponse> GetLastIndexedOn(global::Demo.Search.GetLastIndexedOnRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Demo.Search.ResetResponse> Reset(global::Demo.Search.ResetRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -172,12 +100,8 @@ namespace Demo.Search {
     public static grpc::ServerServiceDefinition BindService(SearchIndexServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_AddOrUpdateItems, serviceImpl.AddOrUpdateItems)
-          .AddMethod(__Method_DeleteItems, serviceImpl.DeleteItems)
-          .AddMethod(__Method_DeleteContentFamily, serviceImpl.DeleteContentFamily)
-          .AddMethod(__Method_DeleteAll, serviceImpl.DeleteAll)
-          .AddMethod(__Method_GetLastIndexedOn, serviceImpl.GetLastIndexedOn)
-          .AddMethod(__Method_Reset, serviceImpl.Reset).Build();
+          .AddMethod(__Method_AddItems, serviceImpl.AddItems)
+          .AddMethod(__Method_DeleteItems, serviceImpl.DeleteItems).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -187,12 +111,8 @@ namespace Demo.Search {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, SearchIndexServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_AddOrUpdateItems, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Demo.Search.AddOrUpdateItemsRequest, global::Demo.Search.AddOrUpdateItemsResponse>(serviceImpl.AddOrUpdateItems));
+      serviceBinder.AddMethod(__Method_AddItems, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Demo.Search.AddItemsRequest, global::Demo.Search.AddItemsResponse>(serviceImpl.AddItems));
       serviceBinder.AddMethod(__Method_DeleteItems, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Demo.Search.DeleteItemsRequest, global::Demo.Search.DeleteItemsResponse>(serviceImpl.DeleteItems));
-      serviceBinder.AddMethod(__Method_DeleteContentFamily, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Demo.Search.DeleteContentFamilyRequest, global::Demo.Search.DeleteContentFamilyResponse>(serviceImpl.DeleteContentFamily));
-      serviceBinder.AddMethod(__Method_DeleteAll, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Demo.Search.DeleteAllRequest, global::Demo.Search.DeleteAllResponse>(serviceImpl.DeleteAll));
-      serviceBinder.AddMethod(__Method_GetLastIndexedOn, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Demo.Search.GetLastIndexedOnRequest, global::Demo.Search.GetLastIndexedOnResponse>(serviceImpl.GetLastIndexedOn));
-      serviceBinder.AddMethod(__Method_Reset, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Demo.Search.ResetRequest, global::Demo.Search.ResetResponse>(serviceImpl.Reset));
     }
 
   }

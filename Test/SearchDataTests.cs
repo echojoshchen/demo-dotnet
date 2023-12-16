@@ -9,6 +9,16 @@ public class SearchDataTests
 {
     string filePath = Assembly.GetExecutingAssembly().Location;
 
+    private ContentItem createTestItem(string id, string lang, string title)
+    {
+        return new ContentItem
+        {
+            Id = id,
+            Lang = lang,
+            Title = title,
+        };
+    }
+
     [Fact]
     public void AddOrUpdateItems_ShouldAddItems()
     {
@@ -16,15 +26,15 @@ public class SearchDataTests
         var searchData = new SearchData(filePath);
         var items = new List<ContentItem>
         {
-            new ContentItem { Id = "1", Title = "Test 1" },
-            new ContentItem { Id = "2", Title = "Test 2" }
+            createTestItem("1", "E", "Test 1"),
+            createTestItem("2", "E", "Test 2"),
         };
 
         // Act
-        searchData.AddOrUpdateItems(items);
+        searchData.AddItems(items);
 
         // Assert
-        var results = searchData.GetResults("Test");
+        var results = searchData.GetResults("E", "test");
         Assert.Equal(2, results.Count);
     }
 
@@ -35,14 +45,15 @@ public class SearchDataTests
         var searchData = new SearchData(filePath);
         var items = new List<ContentItem>
         {
-            new ContentItem { Id = "1", Title = "Test 1" },
-            new ContentItem { Id = "2", Title = "Test 2" },
-            new ContentItem { Id = "3", Title = "Another Test" }
+            createTestItem("1", "E", "Test 1"),
+            createTestItem("2", "E", "Test 2"),
+            createTestItem("3", "E", "Nothing"),
+            createTestItem("4", "S", "Test Spanish"),
         };
-        searchData.AddOrUpdateItems(items);
+        searchData.AddItems(items);
 
         // Act
-        var results = searchData.GetResults("Test");
+        var results = searchData.GetResults("E", "Test");
 
         // Assert
         Assert.Equal(2, results.Count);

@@ -40,83 +40,35 @@ namespace Demo.Search
             db.Dispose();
         }
 
-        public List<SearchItem> searchMetadata(string statement, string text)
+        public List<ContentItem> GetResults(string lang, string text)
         {
-            List<SearchItem> results = db!.Query<SearchItem>(statement, new string[] { text });
+            string queryStatement = "SELECT id, lang, title, published_date FROM search_index WHERE lang = ? AND content MATCH ?";
+            List<ContentItem> results = db!.Query<ContentItem>(queryStatement, new string[] { lang, text });
             return results;
         }
 
-        public void insertItems(
-            string countStatement,
-            string insertStatement,
-            string updateStatement,
-            string finalizeStatement,
-            List<string> ids,
-            List<List<dynamic>> items
-        )
+        public void AddItems(List<ContentItem> items)
         {
             db!.BeginTransaction();
-            for (int i = 0; i < ids.Count && i < items.Count; i++)
+            string createStatement = "CREATE VIRTUAL TABLE IF NOT EXISTS search_index FTS5(id TEXT, lang TEXT, title TEXT, published_date TEXT, content TEXT)";
+            db.Execute(createStatement);
+            for (int i = 0; i < items.Count; i++)
             {
-                var id = ids[i];
                 var item = items[i];
-
-                var count = db.Query<int>(countStatement, new string[] { id });
+                string countStatement = "SELECT COUNT(*) FROM search_index WHERE id = ?";
+                var count = db.Query<int>(countStatement, new string[] { item.Id });
                 if (count.Count > 0)
                 {
-                    item.Add(id);
-                    db.Execute(updateStatement, item.ToArray());
+                    string updateStatement = "UPDATE search_index SET lang = ?, title = ?, published_date = ?, content = ? WHERE id = ?";
+                    db.Execute(updateStatement, item.Id, item.Lang, item.Title, item.PublishedDate, item.Content);
                 }
                 else
                 {
-                    db.Execute(insertStatement, item.ToArray());
+                    string insertStatement = "INSERT INTO search_index (id, lang, title, published_date, content) VALUES (?, ?, ?, ?, ?)";
+                    db.Execute(insertStatement, item.Id, item.Lang, item.Title, item.PublishedDate, item.Content);
                 }
             }
-            db.Execute(finalizeStatement);
             db.Commit();
-        }
-
-        public void runStatement(string statement, List<string> args)
-        {
-            db!.Execute(statement, args.ToArray());
-        }
-
-        public void runStatementList(List<string> statementList)
-        {
-            db!.BeginTransaction();
-            foreach (var statement in statementList)
-            {
-                db.Execute(statement);
-            }
-            db.Commit();
-        }
-
-        public List<SearchItem> getStatement(string statement, List<string> args)
-        {
-            List<SearchItem> results = db!.Query<SearchItem>(statement, args.ToArray());
-            return results;
-        }
-
-        public string readFile(string filename)
-        {
-            return File.ReadAllText(localPath + Path.DirectorySeparatorChar + filename);
-        }
-
-        public void writeFile(string filename, string data)
-        {
-            File.WriteAllText(localPath + Path.DirectorySeparatorChar + filename, data);
-        }
-
-        public string getIndexDate(string statement)
-        {
-            try {
-                var results = db!.QueryScalars<string>(statement);
-                return results[0];
-            }
-            catch (Exception)
-            {
-                return "";
-            }
         }
 
         private void openDb() {
