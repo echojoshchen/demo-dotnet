@@ -1,4 +1,4 @@
-using GrpcDemo.Services;
+using Demo.Search;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +8,8 @@ builder.Services.AddGrpc().AddJsonTranscoding();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-app.MapGrpcService<DemoService>();
+app.MapGrpcService<QueryService>();
+app.MapGrpcService<IndexService>();
 app.MapGet("/", () => "Demo gRPC app");
 
 app.Run();

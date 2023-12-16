@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+option csharp_namespace = "Demo.Search";
+
+import "google/api/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+package org.demo;
+
+message ContentItem {
+    string lang = 1;
+    string contentFamily = 2;
+    string id = 3;
+    string preserved = 4;
+    google.protobuf.Timestamp publishedDate = 5;
+    repeated SearchableField fields = 6;
+}
+
+enum FieldType {
+    TITLE = 0;
+    SEARCH_KEYWORDS = 1;
+    REFERENCE_CODE = 2;
+    TEXT_BLOB = 3;
+    CATEGORY = 4;
+}
+
+message SearchableField {
+    FieldType type = 1;
+    string text = 2;
+}
+
+message ContentItemId {
+    string lang = 1;
+    string id = 2;
+}
+
+service SearchIndexService {
+    rpc AddOrUpdateItems (AddOrUpdateItemsRequest) returns (AddOrUpdateItemsResponse) {
+        option (google.api.http) = {
+            post: "/api/1.0/add-or-update-items"
+            body: "*"
+        };
+    }
+    rpc DeleteItems (DeleteItemsRequest) returns (DeleteItemsResponse) {
+        option (google.api.http) = {
+            post: "/api/1.0/delete-items"
+            body: "*"
+        };
+    }
+    rpc DeleteContentFamily (DeleteContentFamilyRequest) returns (DeleteContentFamilyResponse) {
+        option (google.api.http) = {
+            post: "/api/1.0/delete-content-family"
+        };
+    }
+    rpc DeleteAll (DeleteAllRequest) returns (DeleteAllResponse) {
+        option (google.api.http) = {
+            post: "/api/1.0/delete-all"
+        };
+    }
+    rpc GetLastIndexedOn (GetLastIndexedOnRequest) returns (GetLastIndexedOnResponse) {
+        option (google.api.http) = {
+            get: "/api/1.0/get-last-indexed-on"
+        };
+    }
+    rpc Reset (ResetRequest) returns (ResetResponse) {
+        option (google.api.http) = {
+            post: "/api/1.0/reset"
+        };
+    }
+}
+
+message AddOrUpdateItemsRequest {
+    repeated ContentItem items = 1;
+}
+
+message AddOrUpdateItemsResponse {
+    bool success = 1;
+}
+
+message DeleteItemsRequest {
+    repeated ContentItemId ids = 1;
+}
+
+message DeleteItemsResponse {
+    bool success = 1;
+}
+
+message DeleteContentFamilyRequest {
+    string lang = 1;
+    string contentFamily = 2;
+}
+
+message DeleteContentFamilyResponse {
+    bool success = 1;
+}
+
+message DeleteAllRequest {
+    string lang = 1;
+}
+
+message DeleteAllResponse {
+    bool success = 1;
+}
+
+message GetLastIndexedOnRequest {
+    string lang = 1;
+    string contentFamily = 2;
+}
+
+message GetLastIndexedOnResponse {
+    google.protobuf.Timestamp lastIndexedOn = 1;
+}
+
+message ResetRequest {}
+
+message ResetResponse {}
+
+message SearchResult {
+    string id = 1;
+    string preserved = 2;
+}
+
+message GetResultsResponse {
+    repeated SearchResult items = 1;
+}
+
+service SearchQueryService {
+    rpc GetResults (GetResultsRequest) returns (GetResultsResponse) {
+        option (google.api.http) = {
+            get: "/api/1.0/get-results"
+        };}
+}
+
+message GetResultsRequest {
+    string lang = 1;
+    string text = 2;
+}
