@@ -1,8 +1,13 @@
 syntax = "proto3";
 
 option csharp_namespace = "GrpcDemo";
+import "google/api/annotations.proto";
 
 package org.demo;
+
+message DemoRequest {
+    string id = 1;
+}
 
 message DemoContainer {
     string id = 1;
@@ -29,5 +34,9 @@ enum MyType {
 }
 
 service DemoApi {
-    rpc DoSomething(DemoContainer) returns (DemoContainer) {};
+    rpc DoSomething(DemoRequest) returns (DemoContainer) {
+        option (google.api.http) = {
+            get: "/v1/demo/{id}"
+        };
+    };
 }
