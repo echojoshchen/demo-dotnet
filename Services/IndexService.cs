@@ -5,7 +5,7 @@ namespace Demo.Search;
 
 public class IndexService : SearchIndexService.SearchIndexServiceBase
 {
-    SearchData searchData = new SearchData(".");
+    SearchData searchData = new SearchData(".", "search.db");
 
     private readonly ILogger<IndexService> _logger;
     public IndexService(ILogger<IndexService> logger)

@@ -5,8 +5,8 @@ namespace Demo.Search;
 
 public class QueryService : SearchQueryService.SearchQueryServiceBase
 {
-    SearchData searchData = new SearchData(".");
-    
+    SearchData searchData = new SearchData(".", "search.db");
+
     private readonly ILogger<QueryService> _logger;
     public QueryService(ILogger<QueryService> logger)
     {

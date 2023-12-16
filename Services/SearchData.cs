@@ -7,14 +7,15 @@ namespace Demo.Search
 {
     class SearchData
     {
-        private string indexFilename = "search.db";
+        private string indexFilename;
         private SQLiteConnection? db;
         private string localPath;
 
 
-        public SearchData(string localPath)
+        public SearchData(string localPath, string filename)
         {
             this.localPath = localPath;
+            this.indexFilename = filename;
             openDb();
         }
 
@@ -42,7 +43,7 @@ namespace Demo.Search
 
         public List<ContentItem> GetResults(string lang, string text)
         {
-            string queryStatement = "SELECT id, lang, title, published_date FROM search_index WHERE lang = ? AND content MATCH ?";
+            string queryStatement = "SELECT id, lang, title, published_date FROM search_index WHERE lang = ? AND search_index MATCH ?";
             List<ContentItem> results = db!.Query<ContentItem>(queryStatement, new string[] { lang, text });
             return results;
         }
@@ -50,22 +51,22 @@ namespace Demo.Search
         public void AddItems(List<ContentItem> items)
         {
             db!.BeginTransaction();
-            string createStatement = "CREATE VIRTUAL TABLE IF NOT EXISTS search_index FTS5(id TEXT, lang TEXT, title TEXT, published_date TEXT, content TEXT)";
+            string createStatement = "CREATE VIRTUAL TABLE IF NOT EXISTS search_index using FTS5(id, lang, title, published_date, content)";
             db.Execute(createStatement);
             for (int i = 0; i < items.Count; i++)
             {
                 var item = items[i];
                 string countStatement = "SELECT COUNT(*) FROM search_index WHERE id = ?";
                 var count = db.Query<int>(countStatement, new string[] { item.Id });
-                if (count.Count > 0)
+                if (count.Count > 0 && count[0] > 0)
                 {
                     string updateStatement = "UPDATE search_index SET lang = ?, title = ?, published_date = ?, content = ? WHERE id = ?";
-                    db.Execute(updateStatement, item.Id, item.Lang, item.Title, item.PublishedDate, item.Content);
+                    db.Execute(updateStatement, new string[] { item.Id, item.Lang, item.Title, "", "" });
                 }
                 else
                 {
-                    string insertStatement = "INSERT INTO search_index (id, lang, title, published_date, content) VALUES (?, ?, ?, ?, ?)";
-                    db.Execute(insertStatement, item.Id, item.Lang, item.Title, item.PublishedDate, item.Content);
+                    string insertStatement = "INSERT INTO search_index VALUES (?, ?, ?, ?, ?)";
+                    db.Execute(insertStatement, new string[] { item.Id, item.Lang, item.Title, "", "" });
                 }
             }
             db.Commit();

@@ -23,7 +23,8 @@ public class SearchDataTests
     public void AddItems_ShouldAddItems()
     {
         // Arrange
-        var searchData = new SearchData(".");
+        var searchData = new SearchData(".", "AddItems.db");
+        searchData.reset();
         var items = new List<ContentItem>
         {
             createTestItem("1", "E", "Test 1"),
@@ -34,7 +35,7 @@ public class SearchDataTests
         searchData.AddItems(items);
 
         // Assert
-        var results = searchData.GetResults("E", "test");
+        var results = searchData.GetResults("E", "Test");
         Assert.AreEqual(2, results.Count);
     }
 
@@ -42,7 +43,8 @@ public class SearchDataTests
     public void GetResults_ShouldReturnCorrectItems()
     {
         // Arrange
-        var searchData = new SearchData(".");
+        var searchData = new SearchData(".", "GetResults.db");
+        searchData.reset();
         var items = new List<ContentItem>
         {
             createTestItem("1", "E", "Test 1"),
