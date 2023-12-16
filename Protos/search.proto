@@ -28,6 +28,11 @@ service SearchIndexService {
             body: "*"
         };
     }
+    rpc DeleteAll (DeleteAllRequest) returns (DeleteAllResponse) {
+        option (google.api.http) = {
+            get: "/api/1.0/delete-all"
+        };
+    }
 }
 
 message AddItemsRequest {
@@ -44,6 +49,14 @@ message DeleteItemsRequest {
 }
 
 message DeleteItemsResponse {
+    bool success = 1;
+    string message = 2;
+}
+
+message DeleteAllRequest {
+}
+
+message DeleteAllResponse {
     bool success = 1;
     string message = 2;
 }

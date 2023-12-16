@@ -53,6 +53,10 @@ namespace Demo.Search {
     static readonly grpc::Marshaller<global::Demo.Search.DeleteItemsRequest> __Marshaller_org_demo_DeleteItemsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.DeleteItemsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Demo.Search.DeleteItemsResponse> __Marshaller_org_demo_DeleteItemsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.DeleteItemsResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Demo.Search.DeleteAllRequest> __Marshaller_org_demo_DeleteAllRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.DeleteAllRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Demo.Search.DeleteAllResponse> __Marshaller_org_demo_DeleteAllResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Demo.Search.DeleteAllResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Demo.Search.AddItemsRequest, global::Demo.Search.AddItemsResponse> __Method_AddItems = new grpc::Method<global::Demo.Search.AddItemsRequest, global::Demo.Search.AddItemsResponse>(
@@ -69,6 +73,14 @@ namespace Demo.Search {
         "DeleteItems",
         __Marshaller_org_demo_DeleteItemsRequest,
         __Marshaller_org_demo_DeleteItemsResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Demo.Search.DeleteAllRequest, global::Demo.Search.DeleteAllResponse> __Method_DeleteAll = new grpc::Method<global::Demo.Search.DeleteAllRequest, global::Demo.Search.DeleteAllResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DeleteAll",
+        __Marshaller_org_demo_DeleteAllRequest,
+        __Marshaller_org_demo_DeleteAllResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -92,6 +104,12 @@ namespace Demo.Search {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Demo.Search.DeleteAllResponse> DeleteAll(global::Demo.Search.DeleteAllRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -101,7 +119,8 @@ namespace Demo.Search {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_AddItems, serviceImpl.AddItems)
-          .AddMethod(__Method_DeleteItems, serviceImpl.DeleteItems).Build();
+          .AddMethod(__Method_DeleteItems, serviceImpl.DeleteItems)
+          .AddMethod(__Method_DeleteAll, serviceImpl.DeleteAll).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -113,6 +132,7 @@ namespace Demo.Search {
     {
       serviceBinder.AddMethod(__Method_AddItems, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Demo.Search.AddItemsRequest, global::Demo.Search.AddItemsResponse>(serviceImpl.AddItems));
       serviceBinder.AddMethod(__Method_DeleteItems, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Demo.Search.DeleteItemsRequest, global::Demo.Search.DeleteItemsResponse>(serviceImpl.DeleteItems));
+      serviceBinder.AddMethod(__Method_DeleteAll, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Demo.Search.DeleteAllRequest, global::Demo.Search.DeleteAllResponse>(serviceImpl.DeleteAll));
     }
 
   }

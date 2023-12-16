@@ -40,4 +40,18 @@ public class IndexService : SearchIndexService.SearchIndexServiceBase
 
         return Task.FromResult(resp);
     }
+
+    public override Task<DeleteAllResponse> DeleteAll(DeleteAllRequest request, ServerCallContext context)
+    {
+        DeleteAllResponse resp = new DeleteAllResponse{};
+        try {
+            searchData.reset();
+            resp.Success = true;
+        } catch (Exception e) {
+            resp.Success = false;
+            resp.Message = "Error adding items: " + e.Message;
+        }
+
+        return Task.FromResult(resp);
+    }
 }
