@@ -8,7 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\search.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\search.proto"
+            OutputDir = "Api"
+            GrpcOutputDir = "Api"
+            GrpcServices="Server" />
   </ItemGroup>
 
   <ItemGroup>

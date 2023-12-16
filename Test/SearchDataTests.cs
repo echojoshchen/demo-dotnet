@@ -1,45 +1,50 @@
-// using Xunit;
-// using Demo.Search;
-// using System.Collections.Generic;
+using Xunit;
+using System;
+using System.Reflection;
+using System.Collections.Generic;
 
-// public class SearchDataTests
-// {
-//     [Fact]
-//     public void AddOrUpdateItems_ShouldAddItems()
-//     {
-//         // Arrange
-//         var searchData = new SearchData();
-//         var items = new List<ContentItem>
-//         {
-//             new ContentItem { Id = "1", Title = "Test 1" },
-//             new ContentItem { Id = "2", Title = "Test 2" }
-//         };
+namespace Demo.Search.Tests;
 
-//         // Act
-//         searchData.AddOrUpdateItems(items);
+public class SearchDataTests
+{
+    string filePath = Assembly.GetExecutingAssembly().Location;
 
-//         // Assert
-//         var results = searchData.GetResults("Test");
-//         Assert.Equal(2, results.Count);
-//     }
+    [Fact]
+    public void AddOrUpdateItems_ShouldAddItems()
+    {
+        // Arrange
+        var searchData = new SearchData(filePath);
+        var items = new List<ContentItem>
+        {
+            new ContentItem { Id = "1", Title = "Test 1" },
+            new ContentItem { Id = "2", Title = "Test 2" }
+        };
 
-//     [Fact]
-//     public void GetResults_ShouldReturnCorrectItems()
-//     {
-//         // Arrange
-//         var searchData = new SearchData();
-//         var items = new List<ContentItem>
-//         {
-//             new ContentItem { Id = "1", Title = "Test 1" },
-//             new ContentItem { Id = "2", Title = "Test 2" },
-//             new ContentItem { Id = "3", Title = "Another Test" }
-//         };
-//         searchData.AddOrUpdateItems(items);
+        // Act
+        searchData.AddOrUpdateItems(items);
 
-//         // Act
-//         var results = searchData.GetResults("Test");
+        // Assert
+        var results = searchData.GetResults("Test");
+        Assert.Equal(2, results.Count);
+    }
 
-//         // Assert
-//         Assert.Equal(2, results.Count);
-//     }
-// }
+    [Fact]
+    public void GetResults_ShouldReturnCorrectItems()
+    {
+        // Arrange
+        var searchData = new SearchData(filePath);
+        var items = new List<ContentItem>
+        {
+            new ContentItem { Id = "1", Title = "Test 1" },
+            new ContentItem { Id = "2", Title = "Test 2" },
+            new ContentItem { Id = "3", Title = "Another Test" }
+        };
+        searchData.AddOrUpdateItems(items);
+
+        // Act
+        var results = searchData.GetResults("Test");
+
+        // Assert
+        Assert.Equal(2, results.Count);
+    }
+}
