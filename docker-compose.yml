@@ -8,7 +8,7 @@ services:
       - -plaintext
       - -bind=0.0.0.0
       - -port=17001
-      - -proto=/app/Protos/demo.proto
+      - -proto=/app/Protos/search.proto
       - host.docker.internal:5242
     extra_hosts:
       - "host.docker.internal:host-gateway"
