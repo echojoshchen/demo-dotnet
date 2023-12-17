@@ -1,3 +1,9 @@
+/// <summary>
+/// Program.cs
+/// 
+/// This is the main entry point for the application.
+/// </summary>
+
 using Demo.Search;
 
 var builder = WebApplication.CreateBuilder(args);

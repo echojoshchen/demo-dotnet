@@ -1,3 +1,9 @@
+/// <summary>
+/// SearchData.cs
+/// 
+/// This class manages the search index.
+/// </summary>
+
 using System;
 using System.Collections.Generic;
 using System.IO;

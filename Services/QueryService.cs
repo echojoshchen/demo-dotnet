@@ -1,3 +1,9 @@
+/// <summary>
+/// QueryService.cs
+/// 
+/// This service returns search results.
+/// </summary>
+
 using System.Linq;
 using Grpc.Core;
 

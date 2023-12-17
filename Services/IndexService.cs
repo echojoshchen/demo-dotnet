@@ -1,3 +1,9 @@
+/// <summary>
+/// IndexService.cs
+/// 
+/// This service adds and deletes items from the search index.
+/// </summary>
+
 using System.Linq;
 using Grpc.Core;
 
