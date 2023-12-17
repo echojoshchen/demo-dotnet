@@ -7,6 +7,10 @@
     <IncludeHttpRuleProtos>true</IncludeHttpRuleProtos>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);7022</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
     <Protobuf Include="Protos\search.proto" GrpcServices="Server" />
   </ItemGroup>
