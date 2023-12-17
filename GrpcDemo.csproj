@@ -12,12 +12,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\search.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\search.proto" GrpcServices="Both" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.49.0" />
+    <PackageReference Include="Grpc.Net.ClientFactory" Version="2.59.0" />
     <PackageReference Include="Microsoft.AspNetCore.Grpc.JsonTranscoding" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="8.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="NuGet.Frameworks" Version="6.8.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />

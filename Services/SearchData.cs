@@ -44,7 +44,7 @@ namespace Demo.Search
         public List<ContentItem> GetResults(string lang, string text)
         {
             string queryStatement = "SELECT id, lang, title, published_date FROM search_index WHERE lang = ? AND search_index MATCH ?";
-            List<ContentItem> results = db!.Query<ContentItem>(queryStatement, new string[] { lang, text });
+            List<ContentItem> results = db!.Query<ContentItem>(queryStatement, lang, text);
             return results;
         }
 
@@ -56,17 +56,17 @@ namespace Demo.Search
             for (int i = 0; i < items.Count; i++)
             {
                 var item = items[i];
-                string countStatement = "SELECT COUNT(*) FROM search_index WHERE id = ?";
-                var count = db.Query<int>(countStatement, new string[] { item.Id });
-                if (count.Count > 0 && count[0] > 0)
+                string countStatement = "SELECT id FROM search_index where id = ?";
+                var count = db.Query<int>(countStatement, item.Id);
+                if (count.Count > 0)
                 {
                     string updateStatement = "UPDATE search_index SET lang = ?, title = ?, published_date = ?, content = ? WHERE id = ?";
-                    db.Execute(updateStatement, new string[] { item.Id, item.Lang, item.Title, "", "" });
+                    db.Execute(updateStatement, item.Lang, item.Title, "", "", item.Id);
                 }
                 else
                 {
                     string insertStatement = "INSERT INTO search_index VALUES (?, ?, ?, ?, ?)";
-                    db.Execute(insertStatement, new string[] { item.Id, item.Lang, item.Title, "", "" });
+                    db.Execute(insertStatement, item.Id, item.Lang, item.Title, "", "");
                 }
             }
             db.Commit();
